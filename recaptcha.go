@@ -47,7 +47,7 @@ func (c Client) FetchRecaptchaV3(token, ip string) (bool, error) {
 	}
 	defer resp.Body.Close()
 
-	var recaptchaV3 RecaptchaV3Response
+	var recaptchaV3 recaptchaV3Response
 	err = json.NewDecoder(resp.Body).Decode(&recaptchaV3)
 	if err != nil {
 		return false, err

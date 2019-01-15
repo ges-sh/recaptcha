@@ -2,8 +2,8 @@ package recaptcha
 
 import "time"
 
-// RecaptchaV3Response represents response from recaptcha API
-type RecaptchaV3Response struct {
+// recaptchaV3Response represents response from recaptcha API
+type recaptchaV3Response struct {
 	Success     bool      `json:"success"`
 	ChallengeTS time.Time `json:"challenge_ts"`
 	Hostname    string    `json:"hostname"`
