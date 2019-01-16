@@ -54,7 +54,7 @@ func (c Client) FetchRecaptchaV3(token, ip string) (bool, error) {
 	}
 
 	if recaptchaV3.ErrorCodes != nil && len(*recaptchaV3.ErrorCodes) > 0 {
-		return false, errors.New(strings.Join(*recaptchaV3.ErrorCodes, "code: "))
+		return false, errors.New(strings.Join(*recaptchaV3.ErrorCodes, ", "))
 	}
 
 	return recaptchaV3.Score >= c.minAcceptableScore, nil
